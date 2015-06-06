@@ -1,0 +1,71 @@
+<idea-plugin version="2">
+  <id>com.vaadin.idea.plugin.VaadinDeclarator</id>
+  <name>Vaadin Declarative Support plugin</name>
+  <version>0.1Alpha</version>
+  <vendor email="elmot@vaadin.com" url="http://vaadin.com">Vaadin.com</vendor>
+
+  <description><![CDATA[
+      Vaadin Declarative Support plugin<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+          Nope yet
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="129"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+<!-- TODO  Syntax Highlighting and Error Highlighting     -->
+<!-- TODO  Annotator                                      -->
+<!-- TODO  External tool                                  -->
+<!-- TODO  Color settings                                 -->
+<!-- TODO  References and Resolve                         -->
+<!-- TODO  Code Completion                                -->
+<!-- TODO  Reference Completion                           -->
+<!-- TODO  Contributor-based Completion                   -->
+<!-- TODO  Find Usages                                    -->
+<!-- TODO  Rename Refactoring                             -->
+<!-- TODO  Safe Delete Refactoring                        -->
+<!-- TODO  Code Formatter                                 -->
+<!-- TODO  Code Style Settings                            -->
+<!-- TODO  Rearranger                                     -->
+<!-- TODO  Code Inspections and Intentions                -->
+<!-- TODO  Structure View                                 -->
+<!-- TODO  Surround With                                  -->
+<!-- TODO  Go to Class and Go to Symbol                   -->
+<!-- TODO  Documentation                                  -->
+<!-- TODO  Additional Minor Features                      -->
+  <extensions defaultExtensionNs="com.intellij">
+    <annotator language="JAVA" implementationClass="com.vaadin.idea.declarator7.VaadinDeclaratorAnnotator"/>
+    <!-- Add your extensions here -->
+    <fileTypeFactory implementation="com.vaadin.idea.declarator7.VaadinDeclaratorFileTypeFactory"/>
+    <lang.parserDefinition language="DVML" implementationClass="com.vaadin.idea.declarator7.VaadinDeclaratorParserDefinition"/>
+    <lang.ast.factory language="DVML" implementationClass="com.vaadin.idea.declarator7.parse.VaadinDeclaratorASTFactory"/>
+
+    <lang.syntaxHighlighterFactory key="DVML" implementationClass="com.vaadin.idea.declarator7.VaadinDeclaratorSyntaxHighlighterFactory"/>
+
+    <completion.contributor language="DVML" implementationClass="com.vaadin.idea.declarator7.VaadinDeclaratorCompletionContributor"/>  </extensions>
+
+  <!--
+todo  Define an utility to search properties
+todo  Define a line marker provider
+-->
+  <!--<application-components>-->
+  <!-- Add your application components here -->
+  <!--</application-components>-->
+
+  <!--<project-components>-->
+  <!-- Add your project components here -->
+  <!--</project-components>-->
+
+  <!--<actions>-->
+  <!-- Add your actions here -->
+  <!--</actions>-->
+
+</idea-plugin>
